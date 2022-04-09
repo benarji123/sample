@@ -11,7 +11,6 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,7 +41,7 @@ public class FunctionsLibrary {
 		}
 		return driver;
 	}
-	// launch url
+	// launch
 	public static void openApplication(WebDriver driver) throws Throwable {
 
 		driver.get(PropertyFileUtil.getValueForKey("Url"));
@@ -87,10 +86,12 @@ public class FunctionsLibrary {
 		}else {
 			System.out.println("unble to perfome click action");
 		}
+		
 	}public static void validateTitle(WebDriver driver,String testdata) {
 		String titleofpage=driver.getTitle();
 		try {
-		Assert.assertEquals(titleofpage, testdata,"Both titles not matched");
+			Assert.assertEquals(testdata, titleofpage);
+			
 		}catch (Throwable e) {
 			System.out.println(e.getMessage());
 		}

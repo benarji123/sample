@@ -1,5 +1,6 @@
 package Utilities;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
@@ -78,7 +79,7 @@ public void setCellData(String sheetname,int row,int column,String status ,Strin
 		
 		
 	}
-	   FileOutputStream fo= new FileOutputStream(writeexcel);
+	   FileOutputStream fo= new FileOutputStream(new File(writeexcel));
 	   wb.write(fo);
 	   
 	   
